@@ -1,11 +1,6 @@
-resource "aws_instance" "example" {
-  ami           = "ami-0aebec83a182ea7ea"
-  instance_type = "t2.micro"
-  
-  # Associate with the specified security group
-  vpc_security_group_ids = ["sg-033691bf4516f6e50"]
-
-  tags = {
-    Name = "MyTerraformInstance"
-  }
+resource "aws_instance" "example1" {
+  ami = var.ami_value
+  instance_type = var.instance_type_value
+  subnet_id = var.subnet_id_value
+  vpc_security_group_ids = var.security_groups_value
 }
