@@ -9,3 +9,7 @@ module "ec2_instance" {
   subnet_id_value = "subnet-06897eb5e20a79524"
   security_groups_value = ["sg-033691bf4516f6e50"]
 }
+
+output "public_ip" {
+  value = module.ec2_instance.public-ip-address
+}
